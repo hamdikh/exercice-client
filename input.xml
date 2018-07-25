@@ -1,0 +1,6 @@
+<checks>
+    <ping>
+        <google>google.com:443</google>
+        <mysite>gooassdfqsdfq.com:443</mysite>
+    </ping>
+</checks>
