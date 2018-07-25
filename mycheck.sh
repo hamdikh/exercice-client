@@ -21,8 +21,10 @@
     ELEMENTS_COUNT=$(xmllint --xpath 'count(//checks/ping/node()/text())' $FILE)                                
 
     for (( var=1; var<=$ELEMENTS_COUNT; var++ ))                                                               
-    do                                                                                                          
-        SITE_NAME=$(xmllint --xpath "name(//checks/ping/*[$var])" $FILE )                                                              
+    do                      
+        # extract element name under ping node                                                                                    
+        SITE_NAME=$(xmllint --xpath "name(//checks/ping/*[$var])" $FILE )                  
+        # extract element content under ping node                                              
         SITE=$(xmllint --xpath "string(//checks/ping/*[$var]/text())" $FILE | cut -f 1 -d ":")                          
         ping -c1 $SITE 1>/dev/null 2>/dev/null                                                                           
         if [ $? -eq 0 ]                                                                                         
