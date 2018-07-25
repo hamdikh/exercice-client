@@ -5,9 +5,9 @@ FILE="$1"
                                                                                                             
                                                                                                             
 ELEMENTS_COUNT=$(xmllint --xpath 'count(//checks/ping/node()/text())' $FILE)                                
-echo $ELEMENTS_COUNT                                                                                         
-                                                                                                            
-for var in $(seq 1 $ELEMENTS_COUNT) do                                                                       
+echo $ELEMENTS_COUNT                                   
+
+for ( var=1; var<=$ELEMENTS_COUNT; var++ ))                                                               
 do                                                                                                          
     SITE_NAME=$(xmllint --xpath "name(//checks/ping/*[$var])" $FILE )                                                              
     SITE=$(xmllint --xpath "string(//checks/ping/*[$var]/text())" $FILE | cut -f 1 -d ":")                          
