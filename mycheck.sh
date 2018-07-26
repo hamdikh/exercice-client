@@ -1,7 +1,7 @@
     #!/bin/bash                                                                                                 
 
     # Dependencies libxml2-utils     
-    # To install them just use apt-get install libxml2-utils / yum install libxml2-utils 
+    # To install them just use apt-get install libxml2-utils / yum install libxml2  
 
     ##
     ## Usage Function
